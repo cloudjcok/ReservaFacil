@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ReservaFácil – Prototipo funcional</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="shell">
+<nav class="side" id="nav" aria-label="Principal"></nav>
+<main id="view"></main>
+</div>
+<div id="toast" role="status"></div>
+
+<dialog id="dCli"><form id="fCli"><h2 id="tCli">Nuevo cliente</h2>
+<div class="pf"><span id="pvAv"></span><div><label for="fFoto" style="margin:0">Foto de perfil (opcional)</label><input type="file" id="fFoto" accept="image/*"></div></div>
+<label for="cNom">Nombre completo</label><input id="cNom" required>
+<label for="cTel">Teléfono</label><input id="cTel" required inputmode="tel">
+<label for="cMail">Correo (opcional)</label><input id="cMail" type="email">
+<div class="row"><button type="button" class="btn" data-a="close" data-d="dCli">Cancelar</button><button class="btn p">Guardar cliente</button></div></form></dialog>
+
+<dialog id="dSrv"><form id="fSrv"><h2 id="tSrv">Nuevo servicio</h2>
+<label for="sNom">Nombre del servicio</label><input id="sNom" required>
+<div class="hg"><div><label for="sDur">Duración (min)</label><input id="sDur" type="number" min="10" max="240" step="5" required></div><div><label for="sPre">Precio ($)</label><input id="sPre" type="number" min="0" step="0.5" required></div></div>
+<label>Icono</label><div class="icons" id="sIco"></div>
+<div class="row"><button type="button" class="btn" data-a="close" data-d="dSrv">Cancelar</button><button class="btn p">Guardar servicio</button></div></form></dialog>
+
+<script src="app.js"></script>
+</body>
+</html>
